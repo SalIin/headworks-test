@@ -1,10 +1,14 @@
 import React from "react";
-import { AuthContainer } from "./containers/AuthContainer/AuthContainer";
+import { AppContainer } from "./containers/AppContainer/AppContainer";
+import { ClientsProvider } from "./providers/ClientsProvider/ClientsProvider";
 
 function App() {
+  console.log();
   return (
     <div className="app">
-      <AuthContainer />
+      <ClientsProvider>
+        <AppContainer />
+      </ClientsProvider>
     </div>
   );
 }

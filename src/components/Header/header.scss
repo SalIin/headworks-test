@@ -5,6 +5,9 @@
   padding: 15px 15px;
   display: flex;
   align-items: center;
+  &__logo {
+    border-radius: 50%;
+  }
   &__links {
     margin-left: 40px;
     a {

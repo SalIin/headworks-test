@@ -4,10 +4,11 @@ import { ClientsPage } from "../../pages/ClientsPage";
 import { HomePage } from "../../pages/HomePage";
 import { AppRoutes } from "../../routes/AppRoutes";
 
-export const AuthContainer = () => {
+export const AppContainer = () => {
   return (
     <BrowserRouter>
       <Switch>
+        <Route path={AppRoutes.Register}>{/* <RegisterPage /> */}</Route>
         <Route path={AppRoutes.Clients}>
           <ClientsPage />
         </Route>
