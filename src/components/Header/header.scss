@@ -3,4 +3,16 @@
 .header {
   background-color: $header-bg;
   padding: 15px 15px;
+  display: flex;
+  align-items: center;
+  &__links {
+    margin-left: 40px;
+    a {
+      transition: all 0.3s ease;
+      margin-right: 30px;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
 }
