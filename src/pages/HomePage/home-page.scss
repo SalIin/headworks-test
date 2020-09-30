@@ -1,0 +1,14 @@
+.home-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  .content-wrapper {
+    align-self: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    transform: translateY(-50%);
+  }
+  &__subtitle {
+    text-align: center;
+  }
+}
