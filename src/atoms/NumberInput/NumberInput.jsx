@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 
-export const NumberInput = ({ error, touched, handleBlur, handleChange }) => {
+export const NumberInput = ({ value, error, handleBlur, handleChange }) => {
   let inputClasses = "form-control";
   const hasError = useMemo(() => error, [error]);
   if (hasError) {

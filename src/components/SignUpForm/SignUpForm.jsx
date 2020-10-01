@@ -23,6 +23,7 @@ export const SignUpForm = () => {
     setFieldError,
     handleSubmit
   );
+
   return (
     <form
       className="jumbotron col-lg-6 signup-form"

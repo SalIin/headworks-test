@@ -11,8 +11,13 @@ export const signupSchema = {
   validationSchema: signUpValidationSchema,
   onSubmit: (values, { resetForm }) => {
     console.log(values);
-    if (!values.card) {
-      resetForm({ values: { ...values, card: "" } });
-    }
+    resetForm({
+      values: {
+        name: "",
+        surname: "",
+        loyalty: { value: "unreachable", label: "Unreachable" },
+        card: "",
+      },
+    });
   },
 };
