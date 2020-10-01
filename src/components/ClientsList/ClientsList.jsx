@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import { AlertMessage } from "../../atoms/AlertMessage";
-import { ClientsContext } from "../../providers/ClientsProvider/ClientsProvider";
 import { ListItem } from "../ListItem";
+import { useSelector } from "react-redux";
+import { getClients } from "./selectors";
 
 export const ClientsList = () => {
-  const { clients } = useContext(ClientsContext);
-
+  const clients = useSelector(getClients);
   if (!clients.length) {
     return <AlertMessage />;
   }

@@ -4,8 +4,8 @@ import { useFormik } from "formik";
 import { signupSchema } from "./signup.schema";
 import { TextInput } from "../../atoms/TextInput/TextInput";
 import { NumberInput } from "../../atoms/NumberInput/NumberInput";
-import "./signup-form.scss";
 import { useSignUpForm } from "./useSignUpForm";
+import "./signup-form.scss";
 
 export const SignUpForm = () => {
   const {

@@ -1,14 +1,17 @@
 import React from "react";
 import { AppContainer } from "./containers/AppContainer/AppContainer";
-import { ClientsProvider } from "./providers/ClientsProvider/ClientsProvider";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import { rootReducer } from "./redux/reducers/rootReducer";
+
+const store = createStore(rootReducer);
 
 function App() {
-  console.log();
   return (
     <div className="app">
-      <ClientsProvider>
+      <Provider store={store}>
         <AppContainer />
-      </ClientsProvider>
+      </Provider>
     </div>
   );
 }
