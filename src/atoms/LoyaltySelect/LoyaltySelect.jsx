@@ -1,7 +1,7 @@
 import React from "react";
 import Select from "react-select";
 
-export const LoyaltySelect = ({ optionLoyalty, setLoyalty, loyalty }) => {
+export const LoyaltySelect = ({ optionLoyalty, setFieldValue, loyalty }) => {
   function customTheme(theme) {
     return {
       ...theme,
@@ -23,7 +23,7 @@ export const LoyaltySelect = ({ optionLoyalty, setLoyalty, loyalty }) => {
       isSearchable
       theme={customTheme}
       styles={customStyle}
-      onChange={setLoyalty}
+      onChange={(value) => setFieldValue("loyalty", value)}
       value={loyalty}
     />
   );

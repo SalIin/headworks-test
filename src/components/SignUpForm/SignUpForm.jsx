@@ -1,39 +1,57 @@
-import React, { useState } from "react";
+import React from "react";
 import { LoyaltySelect } from "../../atoms/LoyaltySelect/LoyaltySelect";
+import { useFormik } from "formik";
+import { signupSchema } from "./signup.schema";
+import { TextInput } from "../../atoms/TextInput/TextInput";
+import "./signup-form.scss";
 
 export const SignUpForm = () => {
-  const [loyalty, setLoyalty] = useState({
-    value: "unreachable",
-    label: "Unreachable",
-  });
   const optionLoyalty = [
     { value: "unreachable", label: "Unreachable" },
     { value: "card", label: "Card" },
     { value: "mobile", label: "Mobile app" },
   ];
+  const {
+    handleSubmit,
+    handleChange,
+    handleBlur,
+    setFieldValue,
+    values,
+    errors,
+    touched,
+  } = useFormik(signupSchema);
   return (
-    <form className="jumbotron col-lg-6 signup-form">
-      <label htmlFor="name">Name</label>
-      <input
+    <form className="jumbotron col-lg-6 signup-form" onSubmit={handleSubmit}>
+      <TextInput
+        label="Name"
         name="name"
-        type="text"
-        className="signup-form__name form-control mb-3"
         placeholder="Enter your name"
+        handleChange={handleChange}
+        value={values.name}
+        handleBlur={handleBlur}
+        error={errors.name}
+        touched={touched.name}
       />
-      <label htmlFor="surname">Surname</label>
-      <input
+      <TextInput
+        label="Surname"
         name="surname"
-        type="text"
-        className="signup-form__surname form-control mb-3"
         placeholder="Enter your surname"
+        handleChange={handleChange}
+        value={values.surname}
+        handleBlur={handleBlur}
+        error={errors.surname}
+        touched={touched.surname}
       />
       <label htmlFor="loyalty">Loyalty</label>
       <LoyaltySelect
         name="loyalty"
         optionLoyalty={optionLoyalty}
-        setLoyalty={setLoyalty}
-        loyalty={loyalty}
+        setFieldValue={setFieldValue}
+        loyalty={values.loyalty}
       />
+      <button type="submit" className="btn btn-success mt-3 w-25">
+        Save
+      </button>
     </form>
   );
 };
