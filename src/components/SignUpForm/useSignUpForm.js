@@ -19,8 +19,10 @@ export const useSignUpForm = (values, setFieldError, handleSubmit) => {
     if (values.loyalty.value === "card" && values.card === "") {
       setFieldError("card", "This is required field");
     } else if (values.loyalty.value === "card" && values.card.length > 0) {
+      values.created = new Date().toJSON().slice(0, 10).replace(/-/g, "/");
       handleSubmit();
     } else if (values.loyalty.value !== "card") {
+      values.created = new Date().toJSON().slice(0, 10).replace(/-/g, "/");
       delete values.card;
       handleSubmit();
     }
