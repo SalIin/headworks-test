@@ -1,4 +1,14 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { loadJoke } from "./actions";
+import { getJoke } from "./selectors";
+
 export const useSignUpForm = (values, setFieldError, handleSubmit) => {
+  const dispatch = useDispatch();
+  const joke = useSelector(getJoke);
+  useEffect(() => {
+    dispatch(loadJoke());
+  }, []); // eslint-disable-line
   const optionLoyalty = [
     { value: "unreachable", label: "Unreachable" },
     { value: "card", label: "Card" },
@@ -17,5 +27,5 @@ export const useSignUpForm = (values, setFieldError, handleSubmit) => {
   }
   const needCardInput = values.loyalty.value === "card" ? true : false;
 
-  return { optionLoyalty, handleFormSubmition, needCardInput };
+  return { optionLoyalty, handleFormSubmition, needCardInput, joke };
 };

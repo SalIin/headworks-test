@@ -19,11 +19,12 @@ export const SignUpForm = () => {
     errors,
     touched,
   } = useFormik(signupSchema);
-  const { optionLoyalty, handleFormSubmition, needCardInput } = useSignUpForm(
-    values,
-    setFieldError,
-    handleSubmit
-  );
+  const {
+    optionLoyalty,
+    handleFormSubmition,
+    needCardInput,
+    joke,
+  } = useSignUpForm(values, setFieldError, handleSubmit);
 
   return (
     <form
@@ -68,6 +69,9 @@ export const SignUpForm = () => {
       <button type="submit" className="btn btn-success mt-3 w-25">
         Save
       </button>
+      <p className="signup-form__joke mt-3">
+        <small>{joke}</small>
+      </p>
     </form>
   );
 };
