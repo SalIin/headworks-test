@@ -5,8 +5,14 @@ export const signupSchema = {
     name: "",
     surname: "",
     loyalty: { value: "unreachable", label: "Unreachable" },
+    card: "",
   },
   validateOnMount: false,
   validationSchema: signUpValidationSchema,
-  onSubmit: (values) => console.log(values),
+  onSubmit: (values, { resetForm }) => {
+    console.log(values);
+    if (!values.card) {
+      resetForm({ values: { ...values, card: "" } });
+    }
+  },
 };

@@ -15,16 +15,19 @@ export const LoyaltySelect = ({ optionLoyalty, setFieldValue, loyalty }) => {
     }),
   };
   return (
-    <Select
-      name="loyalty"
-      className="signup-form__loyalty"
-      placeholder="Loyalty program"
-      options={optionLoyalty}
-      isSearchable
-      theme={customTheme}
-      styles={customStyle}
-      onChange={(value) => setFieldValue("loyalty", value)}
-      value={loyalty}
-    />
+    <>
+      <label htmlFor="loyalty">Loyalty</label>
+      <Select
+        name="loyalty"
+        className="signup-form__loyalty"
+        placeholder="Loyalty program"
+        options={optionLoyalty}
+        isSearchable
+        theme={customTheme}
+        styles={customStyle}
+        onChange={(value) => setFieldValue("loyalty", value)}
+        value={loyalty}
+      />
+    </>
   );
 };

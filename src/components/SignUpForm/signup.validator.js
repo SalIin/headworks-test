@@ -12,4 +12,8 @@ export const signUpValidationSchema = Yup.object().shape({
   loyalty: Yup.object().shape({
     value: Yup.string().required("This field is required"),
   }),
+  card: Yup.string()
+    .min(16, "Enter the number of card of 16 chars")
+    .max(16, "Enter the number of card of 16 chars")
+    .notRequired(),
 });

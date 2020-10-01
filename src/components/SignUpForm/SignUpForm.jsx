@@ -3,25 +3,31 @@ import { LoyaltySelect } from "../../atoms/LoyaltySelect/LoyaltySelect";
 import { useFormik } from "formik";
 import { signupSchema } from "./signup.schema";
 import { TextInput } from "../../atoms/TextInput/TextInput";
+import { NumberInput } from "../../atoms/NumberInput/NumberInput";
 import "./signup-form.scss";
+import { useSignUpForm } from "./useSignUpForm";
 
 export const SignUpForm = () => {
-  const optionLoyalty = [
-    { value: "unreachable", label: "Unreachable" },
-    { value: "card", label: "Card" },
-    { value: "mobile", label: "Mobile app" },
-  ];
   const {
     handleSubmit,
     handleChange,
     handleBlur,
     setFieldValue,
+    setFieldError,
     values,
     errors,
     touched,
   } = useFormik(signupSchema);
+  const { optionLoyalty, handleFormSubmition, needCardInput } = useSignUpForm(
+    values,
+    setFieldError,
+    handleSubmit
+  );
   return (
-    <form className="jumbotron col-lg-6 signup-form" onSubmit={handleSubmit}>
+    <form
+      className="jumbotron col-lg-6 signup-form"
+      onSubmit={handleFormSubmition}
+    >
       <TextInput
         label="Name"
         name="name"
@@ -42,13 +48,21 @@ export const SignUpForm = () => {
         error={errors.surname}
         touched={touched.surname}
       />
-      <label htmlFor="loyalty">Loyalty</label>
       <LoyaltySelect
         name="loyalty"
         optionLoyalty={optionLoyalty}
         setFieldValue={setFieldValue}
         loyalty={values.loyalty}
       />
+      {needCardInput ? (
+        <NumberInput
+          error={errors.card}
+          touched={touched.card}
+          handleBlur={handleBlur}
+          handleChange={handleChange}
+          value={values.card}
+        />
+      ) : null}
       <button type="submit" className="btn btn-success mt-3 w-25">
         Save
       </button>

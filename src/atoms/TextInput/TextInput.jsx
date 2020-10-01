@@ -28,11 +28,11 @@ export const TextInput = ({
         value={value}
         onBlur={handleBlur}
       />
-      {hasError ? (
+      {hasError && (
         <div className="signup-form__error mb-3">
           <small>{error}</small>
         </div>
-      ) : null}
+      )}
     </>
   );
 };
