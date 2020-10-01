@@ -4,9 +4,9 @@ import { AppRoutes } from "../../routes/AppRoutes";
 
 export const AlertMessage = () => {
   return (
-    <div class="alert alert-dismissible alert-info">
+    <div className="alert alert-dismissible alert-info">
       <strong>Clients list is empty!</strong> Try to{" "}
-      <Link to={AppRoutes.Register} class="alert-link">
+      <Link to={AppRoutes.Register} className="alert-link">
         add new client
       </Link>
       .

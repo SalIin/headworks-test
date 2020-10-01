@@ -1,0 +1,1 @@
+export { LoyaltySelect } from "./LoyaltySelect";

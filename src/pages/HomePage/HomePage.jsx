@@ -8,9 +8,9 @@ export const HomePage = () => {
       <Header />
       <div className="content-wrapper">
         <h1 className="home-page__title">
-          We are glad to see you in our Register App!
+          We are glad to see you in our Registration App!
         </h1>
-        <p className="home-page__subtitle">Happy using</p>
+        <p className="home-page__subtitle text-success">Happy using</p>
       </div>
     </div>
   );
