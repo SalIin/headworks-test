@@ -1,13 +1,14 @@
 import React from "react";
 import { LoyaltySelect } from "../../atoms/LoyaltySelect/LoyaltySelect";
 import { useFormik } from "formik";
-import { signupSchema } from "./signup.schema";
 import { TextInput } from "../../atoms/TextInput/TextInput";
 import { NumberInput } from "../../atoms/NumberInput/NumberInput";
 import { useSignUpForm } from "./useSignUpForm";
+import { useSignUpFormSchema } from "./signup.schema";
 import "./signup-form.scss";
 
 export const SignUpForm = () => {
+  const { signupSchema } = useSignUpFormSchema();
   const {
     handleSubmit,
     handleChange,
