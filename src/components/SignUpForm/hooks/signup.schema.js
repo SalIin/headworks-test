@@ -1,7 +1,7 @@
-import { signUpValidationSchema } from "./signup.validator";
+import { signUpValidationSchema } from "../signup.validator";
 import { useDispatch } from "react-redux";
-import { addClient } from "./actions";
-import { showSuccessAlert } from "../../helpers/swal";
+import { addClient } from "../action-creators/actions";
+import { showSuccessAlert } from "../../../helpers/swal";
 
 export const useSignUpFormSchema = () => {
   const dispatch = useDispatch();

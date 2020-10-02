@@ -4,7 +4,7 @@ import { createStore, compose, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import { rootReducer } from "./redux/reducers/rootReducer";
 import createSagaMiddleware from "redux-saga";
-import { watchLoadJoke } from "./components/SignUpForm/saga";
+import { watchLoadJoke } from "./components/SignUpForm/sagas/saga";
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(

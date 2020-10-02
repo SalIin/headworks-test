@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loadJoke } from "./actions";
-import { getJoke, getLoadingStatus } from "./selectors";
+import { loadJoke } from "../action-creators/actions";
+import { getJoke, getLoadingStatus } from "../selectors/selectors";
 
 export const useSignUpForm = (values, setFieldError, handleSubmit) => {
   const dispatch = useDispatch();

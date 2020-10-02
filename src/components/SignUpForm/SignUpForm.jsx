@@ -1,12 +1,13 @@
 import React from "react";
-import { LoyaltySelect } from "../../atoms/LoyaltySelect/LoyaltySelect";
+import { LoyaltySelect } from "../../atoms/LoyaltySelect";
 import { useFormik } from "formik";
 import { TextInput } from "../../atoms/TextInput/TextInput";
-import { NumberInput } from "../../atoms/NumberInput/NumberInput";
-import { useSignUpForm } from "./useSignUpForm";
-import { useSignUpFormSchema } from "./signup.schema";
+import { NumberInput } from "../../atoms/NumberInput";
+import { useSignUpForm } from "./hooks/useSignUpForm";
+import { useSignUpFormSchema } from "./hooks/signup.schema";
 import "./signup-form.scss";
-import { Loader } from "../Loader/Loader";
+import { SubmitButton } from "../../atoms/SubmitButton";
+import { JokeBlock } from "../JokeBlock/JokeBlock";
 
 export const SignUpForm = () => {
   const { signupSchema } = useSignUpFormSchema();
@@ -68,12 +69,8 @@ export const SignUpForm = () => {
           value={values.card}
         />
       ) : null}
-      <button type="submit" className="btn btn-success mt-3 w-25">
-        Save
-      </button>
-      <div className="signup-form__joke mt-3">
-        {loading ? <Loader /> : <small>{joke}</small>}
-      </div>
+      <SubmitButton />
+      <JokeBlock joke={joke} loading={loading} />
     </form>
   );
 };

@@ -4,7 +4,7 @@ import {
   LOAD_JOKE,
   PUT_JOKE,
   SHOW_LOADER,
-} from "../../redux/action-types/action-types";
+} from "../../../redux/action-types/action-types";
 
 export function addClient(client) {
   return { type: ADD_CLIENT, payload: client };
