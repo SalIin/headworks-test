@@ -2,7 +2,7 @@ import React from "react";
 
 export const InfoBlock = () => {
   return (
-    <div className="jumbotron about-page__info info col-lg-6">
+    <div className="jumbotron about-page__info info col-md-12 col-lg-8">
       <div className="info__developer developer">
         <h5 className="developer__title">Developer</h5>
         <p className="developer__content">Bilokrynytskyi Yehor</p>
@@ -16,7 +16,7 @@ export const InfoBlock = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i class="fa fa-telegram" aria-hidden="true" />
+              <i className="fa fa-telegram" aria-hidden="true" />
               <span className="link-text"> Telegram</span>
             </a>
           </p>
@@ -26,7 +26,7 @@ export const InfoBlock = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i class="fa fa-instagram" aria-hidden="true" />
+              <i className="fa fa-instagram" aria-hidden="true" />
               <span className="link-text"> Instagram</span>
             </a>
           </p>
@@ -35,11 +35,11 @@ export const InfoBlock = () => {
       <div className="info__contacts">
         <h5>Contacts</h5>
         <p>
-          <i class="fa fa-mobile" aria-hidden="true"></i>
+          <i className="fa fa-mobile" aria-hidden="true"></i>
           <span> +380969753760</span>
         </p>
         <p>
-          <i class="fa fa-envelope-o" aria-hidden="true"></i>
+          <i className="fa fa-envelope-o" aria-hidden="true"></i>
           <span className="link-text"> sallin.prod@gmail.com</span>
         </p>
       </div>

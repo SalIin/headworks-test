@@ -2,19 +2,21 @@ export const clients = [
   {
     name: "Patrick",
     surname: "Adams",
-    gender: "male",
-    created: "2020/01/15",
+    created: "2019/01/15",
   },
   {
-    name: "Patrick",
-    surname: "Adams",
-    gender: "male",
-    created: "2020/01/15",
+    name: "Nick",
+    surname: "Brown",
+    created: "2020/04/25",
   },
   {
-    name: "Patrick",
-    surname: "Adams",
-    gender: "male",
-    created: "2020/01/15",
+    name: "Steve",
+    surname: "Green",
+    created: "2020/01/07",
+  },
+  {
+    name: "Hugo",
+    surname: "Rodriguez",
+    created: "2020/12/12",
   },
 ];

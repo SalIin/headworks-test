@@ -4,9 +4,10 @@ import {
   PUT_JOKE,
   SHOW_LOADER,
 } from "../action-types/action-types";
+import { clients } from "../../data/clients-db";
 
 const initialState = {
-  clients: [],
+  clients,
   joke: "",
   loading: false,
 };

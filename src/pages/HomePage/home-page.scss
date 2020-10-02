@@ -1,3 +1,5 @@
+@import "../../assets/scss/media.scss";
+
 .home-page {
   height: 100vh;
   display: flex;
@@ -11,6 +13,12 @@
   }
   &__title {
     text-align: center;
+    @include medium {
+      font-size: 36px;
+    }
+    @include small {
+      font-size: 28px;
+    }
   }
   &__subtitle {
     text-align: center;

@@ -10,7 +10,7 @@ export const ClientsList = () => {
     return <AlertMessage />;
   }
   return (
-    <ul className="list-group clients-page__list col-lg-6">
+    <ul className="list-group clients-page__list col-md-6 col-sm-12">
       {clients.map((client) => (
         <ListItem
           key={Date.now() + Math.random() * 10}
