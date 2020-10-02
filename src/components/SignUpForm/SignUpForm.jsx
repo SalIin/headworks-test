@@ -31,7 +31,7 @@ export const SignUpForm = () => {
 
   return (
     <form
-      className="jumbotron col-lg-6 signup-form"
+      className="jumbotron col-md-8 col-lg-6 signup-form"
       onSubmit={handleFormSubmition}
     >
       <TextInput
