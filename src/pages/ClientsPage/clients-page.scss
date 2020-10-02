@@ -1,5 +1,24 @@
+@import "../../assets/scss/colors.scss";
+
 .clients-page {
+  .alert {
+    margin-bottom: 0;
+  }
   &__list {
     user-select: none;
+  }
+  &__button {
+    margin-top: 12.3px;
+    a {
+      background-color: $signup-btn;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      &:hover {
+        text-decoration: none;
+        background-color: $signup-btn-hover;
+      }
+    }
   }
 }
