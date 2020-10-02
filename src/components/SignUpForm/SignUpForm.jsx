@@ -8,6 +8,7 @@ import { useSignUpFormSchema } from "./hooks/signup.schema";
 import "./signup-form.scss";
 import { SubmitButton } from "../../atoms/SubmitButton";
 import { JokeBlock } from "../JokeBlock/JokeBlock";
+import { GenderSelect } from "../../atoms/GenderSelect/GenderSelect";
 
 export const SignUpForm = () => {
   const { signupSchema } = useSignUpFormSchema();
@@ -23,6 +24,7 @@ export const SignUpForm = () => {
   } = useFormik(signupSchema);
   const {
     optionLoyalty,
+    optionGender,
     handleFormSubmition,
     needCardInput,
     joke,
@@ -54,8 +56,12 @@ export const SignUpForm = () => {
         error={errors.surname}
         touched={touched.surname}
       />
+      <GenderSelect
+        optionGender={optionGender}
+        setFieldValue={setFieldValue}
+        gender={values.gender}
+      />
       <LoyaltySelect
-        name="loyalty"
         optionLoyalty={optionLoyalty}
         setFieldValue={setFieldValue}
         loyalty={values.loyalty}

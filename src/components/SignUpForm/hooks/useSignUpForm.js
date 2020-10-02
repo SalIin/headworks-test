@@ -15,8 +15,15 @@ export const useSignUpForm = (values, setFieldError, handleSubmit) => {
     { value: "card", label: "Card" },
     { value: "mobile", label: "Mobile app" },
   ];
+  const optionGender = [
+    { value: "male", label: "Male" },
+    { value: "female", label: "Female" },
+  ];
   function handleFormSubmition(e) {
     e.preventDefault();
+    if (!Object.keys(values).includes("card")) {
+      values.card = "";
+    }
     if (values.loyalty.value === "card" && values.card === "") {
       setFieldError("card", "This is required field");
     } else if (values.loyalty.value === "card" && values.card.length > 0) {
@@ -30,5 +37,12 @@ export const useSignUpForm = (values, setFieldError, handleSubmit) => {
   }
   const needCardInput = values.loyalty.value === "card" ? true : false;
 
-  return { optionLoyalty, handleFormSubmition, needCardInput, joke, loading };
+  return {
+    optionLoyalty,
+    optionGender,
+    handleFormSubmition,
+    needCardInput,
+    joke,
+    loading,
+  };
 };
