@@ -1,7 +1,9 @@
 import {
   ADD_CLIENT,
+  HIDE_LOADER,
   LOAD_JOKE,
   PUT_JOKE,
+  SHOW_LOADER,
 } from "../../redux/action-types/action-types";
 
 export function addClient(client) {
@@ -12,4 +14,10 @@ export function loadJoke() {
 }
 export function putJoke(joke) {
   return { type: PUT_JOKE, payload: joke };
+}
+export function showLoader() {
+  return { type: SHOW_LOADER };
+}
+export function hideLoader() {
+  return { type: HIDE_LOADER };
 }

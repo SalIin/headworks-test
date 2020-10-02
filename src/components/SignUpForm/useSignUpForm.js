@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadJoke } from "./actions";
-import { getJoke } from "./selectors";
+import { getJoke, getLoadingStatus } from "./selectors";
 
 export const useSignUpForm = (values, setFieldError, handleSubmit) => {
   const dispatch = useDispatch();
   const joke = useSelector(getJoke);
+  const loading = useSelector(getLoadingStatus);
   useEffect(() => {
     dispatch(loadJoke());
   }, []); // eslint-disable-line
@@ -29,5 +30,5 @@ export const useSignUpForm = (values, setFieldError, handleSubmit) => {
   }
   const needCardInput = values.loyalty.value === "card" ? true : false;
 
-  return { optionLoyalty, handleFormSubmition, needCardInput, joke };
+  return { optionLoyalty, handleFormSubmition, needCardInput, joke, loading };
 };

@@ -6,6 +6,7 @@ import { NumberInput } from "../../atoms/NumberInput/NumberInput";
 import { useSignUpForm } from "./useSignUpForm";
 import { useSignUpFormSchema } from "./signup.schema";
 import "./signup-form.scss";
+import { Loader } from "../Loader/Loader";
 
 export const SignUpForm = () => {
   const { signupSchema } = useSignUpFormSchema();
@@ -24,6 +25,7 @@ export const SignUpForm = () => {
     handleFormSubmition,
     needCardInput,
     joke,
+    loading,
   } = useSignUpForm(values, setFieldError, handleSubmit);
 
   return (
@@ -69,9 +71,9 @@ export const SignUpForm = () => {
       <button type="submit" className="btn btn-success mt-3 w-25">
         Save
       </button>
-      <p className="signup-form__joke mt-3">
-        <small>{joke}</small>
-      </p>
+      <div className="signup-form__joke mt-3">
+        {loading ? <Loader /> : <small>{joke}</small>}
+      </div>
     </form>
   );
 };
