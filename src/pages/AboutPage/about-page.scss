@@ -1,0 +1,31 @@
+@import "../../assets/scss/colors.scss";
+
+.about-page {
+  &__photo {
+    width: 300px;
+    height: 300px;
+  }
+  &__info {
+    display: flex;
+    & > div {
+      margin-right: 80px;
+    }
+    h5 {
+      color: #00bc8c;
+    }
+  }
+  i {
+    color: #00bc8c;
+  }
+  .social__content {
+    a {
+      transition: all 0.3s ease;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    .link-text {
+      color: #fff;
+    }
+  }
+}

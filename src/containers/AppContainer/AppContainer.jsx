@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { AboutPage } from "../../pages/AboutPage";
 import { ClientsPage } from "../../pages/ClientsPage";
 import { HomePage } from "../../pages/HomePage";
 import { RegisterPage } from "../../pages/RegisterPage";
@@ -9,6 +10,9 @@ export const AppContainer = () => {
   return (
     <BrowserRouter>
       <Switch>
+        <Route path={AppRoutes.About}>
+          <AboutPage />
+        </Route>
         <Route path={AppRoutes.Register}>
           <RegisterPage />
         </Route>

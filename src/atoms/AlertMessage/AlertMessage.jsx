@@ -1,15 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { AppRoutes } from "../../routes/AppRoutes";
 
 export const AlertMessage = () => {
   return (
-    <div className="alert alert-dismissible alert-info">
-      <strong>Clients list is empty!</strong> Try to{" "}
-      <Link to={AppRoutes.Register} className="alert-link">
-        add new client
-      </Link>
-      .
+    <div className="alert alert-dismissible alert-info col-md-6 col-sm-12">
+      <strong>Clients list is empty!</strong> Try to add new client.
     </div>
   );
 };

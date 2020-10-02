@@ -9,7 +9,7 @@ export const ClientsPage = () => {
     <div className="clients-page">
       <Header />
       <div className="container-fluid pt-3">
-        <h1>Clients list</h1>
+        <h1 className="clients-page__title">Clients list</h1>
         <div className="row">
           <ClientsList />
           <AddClientButton />
